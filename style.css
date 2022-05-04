@@ -9,6 +9,7 @@
   --paragraph: #495057;
   --primaryboxcolor: #fffaf1;
   --borderprimarybox: #dce9e2;
+  --bg-light: #f7f9f9;
   --nav-height: 7.2rem;
   font-size: 62.5%
     /*como o padrão é 16 pixels, 62.5% de 16 é 10
@@ -26,12 +27,17 @@ body {
   text-align: center;
 
   overflow: overlay;
+  background-color: var(--bg-light);
 }
 .wrapper /*embrulhando*/ {
   width: 37.5rem;
   margin-right: auto;
   margin-left: auto;
   padding-inline: 2.4rem;
+}
+section {
+  padding-block: 10rem;
+  /*top and bottom*/
 }
 ul {
   list-style: none;
@@ -248,4 +254,41 @@ body.menu-expanded .logo path {
 }
 body.menu-expanded button path {
   stroke: white;
+}
+/* ================== SERVICES ============== */
+
+#services header h4 {
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+}
+
+#services header h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.9rem;
+  color: var(--headline);
+  margin-bottom: 6rem;
+}
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  background: var(--bg-light);
+}
+
+#services .card {
+  padding: 2.4rem;
+  text-align: left;
+  background: white;
+  border: 0.1rem solid var(--borderprimarybox);
+  box-sizing: border-box;
+  border-radius: 0.6rem;
+}
+#services .card h3 {
+  margin-block: 1.6rem;
 }
