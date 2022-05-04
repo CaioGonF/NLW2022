@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 :root {
@@ -8,31 +9,41 @@
   --paragraph: #495057;
   --primaryboxcolor: #fffaf1;
   --borderprimarybox: #dce9e2;
+  --nav-height: 7.2rem;
   font-size: 62.5%
     /*como o padrão é 16 pixels, 62.5% de 16 é 10
   e como 1rem é igual ao font size do root, agora 1rem = 10px*/;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 body {
   font-family: 'DM Sans', sans-serif;
   font-size: 1.6rem;
   text-align: center;
+
+  overflow: overlay;
 }
 .wrapper /*embrulhando*/ {
   width: 37.5rem;
   margin-right: auto;
   margin-left: auto;
+  padding-inline: 2.4rem;
+}
+ul {
+  list-style: none;
 }
 header {
-  padding-right: 2rem;
-  padding-left: 2rem;
-  margin-top: 4.1rem;
+  margin-top: calc(4.1rem + var(--nav-height));
 }
 header::before {
   content: '';
-  width: 100vw;
-  /* vw = tamanho da view window*/
-  height: 108rem;
+  width: 100%;
+  /* vw = tamanho da view width*/
+  height: calc(108rem + var(--nav-height));
 
   background-color: var(--borderprimarybox);
   display: block;
@@ -120,10 +131,121 @@ header button {
   line-height: 150%;
 }
 
+/* ================== NAVIGATION ====================== */
 nav {
+  display: flex;
+  height: var(--nav-height);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+nav .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
 
-  padding: 1.6rem 2.4rem;
+nav.scroll {
+  background: var(--primary-color);
+  width: 100vw;
+}
+nav.scroll svg:nth-child(1) path {
+  fill: white;
+}
+nav.scroll button path {
+  stroke: white;
+}
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================== MENU-EXPANDED ============== */
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded {
+  overflow: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+  display: none;
+}
+body.menu-expanded .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--primary-color);
+
+  width: 100vw;
+  height: 100vh;
+  /* vh = view height */
+
+  padding-top: var(--nav-height);
+}
+body.menu-expanded nav {
+  position: relative;
+}
+.menu ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-top: 6rem;
+
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu .button {
+  background: white;
+  border-radius: 4rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: inline-block;
+  line-height: 2.3rem;
+  /*deixamos de controlar a caixa externamente, mas controlamos as caixas internas(conteudo)*/
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded nav button {
+  position: relative;
+  z-index: 100;
+}
+
+body.menu-expanded .logo path {
+  fill: white;
+}
+body.menu-expanded button path {
+  stroke: white;
 }
