@@ -11,6 +11,8 @@
   --borderprimarybox: #dce9e2;
   --bg-light: #f7f9f9;
   --nav-height: 7.2rem;
+  --brand-button-green-hover: #00453a;
+
   font-size: 62.5%
     /*como o padrão é 16 pixels, 62.5% de 16 é 10
   e como 1rem é igual ao font size do root, agora 1rem = 10px*/;
@@ -74,6 +76,32 @@ section .content p {
   line-height: 150%;
 
   color: var(--paragraph);
+}
+.button {
+  background: var(--primary-color);
+  margin-bottom: 6rem;
+
+  padding: 1.6rem 3.2rem;
+  width: fit-content;
+
+  border-radius: 4rem;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  /*deixamos de controlar a caixa externamente, mas controlamos as caixas internas(conteudo)*/
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  text-decoration: none;
+
+  transition: background 0.2s;
+}
+.button:hover {
+  background-color: var(--brand-button-green-hover);
 }
 /* ================== NAVIGATION ====================== */
 nav {
@@ -241,25 +269,8 @@ body.menu-expanded button path {
   font-weight: 400;
   margin-bottom: 3.2rem;
 }
-#home button {
-  background: var(--primary-color);
-  margin-bottom: 6rem;
-  width: 26.3rem;
-  height: 5.2rem;
-  border-radius: 4rem;
-  border: none;
-  color: white;
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  font-weight: 700;
-  display: flex;
-  /*deixamos de controlar a caixa externamente, mas controlamos as caixas internas(conteudo)*/
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-
-  margin-right: auto;
-  margin-left: auto;
+#home .button {
+  margin-inline: auto;
 }
 
 #home .primarybox {
@@ -344,4 +355,26 @@ body.menu-expanded button path {
 #about .content p {
   margin-top: 2.4rem;
   margin-bottom: 6rem;
+}
+
+/* ================== CONTACT ============== */
+#contact {
+  text-align: left;
+}
+#contact header {
+  margin-block: 10rem;
+}
+#contact ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  margin-bottom: 3.2rem;
+}
+#contact ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+#contact button {
 }
