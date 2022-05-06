@@ -385,3 +385,49 @@ body.menu-expanded button path {
   align-items: center;
   gap: 0.8rem;
 }
+/* ================== FOOTER ============== */
+footer {
+  background-color: var(--primary-color);
+  padding-block: 6rem;
+  padding-inline: 2.6rem;
+  text-align: left;
+  color: #fffaf1;
+}
+footer .logo {
+  display: inline-block;
+  /*O a é um display inline, logo não aceita margin bottom ou top
+  por isso é necessário transformar em inline block*/
+  margin-bottom: 2.4rem;
+}
+footer br {
+  margin-bottom: 1.2rem;
+}
+footer p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.83rem;
+  margin-bottom: 3.2rem;
+}
+footer .social-links {
+  justify-content: flex-start;
+}
+
+/*BACK TO TOP*/
+#backToTopButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 2.5rem;
+
+  opacity: 0;
+  visibility: hidden;
+}
+#backToTopButton.show {
+  opacity: 1;
+  visibility: visible;
+}
+#backToTopButton.inverseButton circle {
+  fill: #ffffff;
+}
+#backToTopButton.inverseButton path {
+  stroke: var(--primary-color);
+}
