@@ -420,10 +420,15 @@ footer .social-links {
 
   opacity: 0;
   visibility: hidden;
+
+  transform: translateY(100%);
+  transition: 240ms;
 }
 #backToTopButton.show {
   opacity: 1;
   visibility: visible;
+
+  transform: translateY(0);
 }
 #backToTopButton.inverseButton circle {
   fill: #ffffff;

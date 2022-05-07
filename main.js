@@ -1,3 +1,5 @@
+window.addEventListener('scroll', onScroll)
+
 function onScroll() {
   showNavOnScroll()
   showBackToTopButtonOnScroll()
@@ -19,7 +21,7 @@ function showBackToTopButtonOnScroll() {
     backToTopButton.classList.remove('show')
   }
 
-  backToTopButton.classList.toggle('inverseButton', scrollY > 5078)
+  backToTopButton.classList.toggle('inverseButton', scrollY > 4400)
 }
 
 function openMenu() {
