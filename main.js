@@ -48,10 +48,10 @@ function activateMenuAtCurrentSection(section) {
 
   const sectionEndsAt = sectionTop + sectionHeight
   // a base da seção chegou ou ultrapassou a Target Line?
-  const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+  const sectionEndPassedTargetLine = sectionEndsAt >= targetLine
 
   const sectionBoundaries =
-    sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+    sectionTopReachOrPassedTargetLine && sectionEndPassedTargetLine
 
   //Trecho para selecionar a string do ID de cada Section
   const sectionId = section.getAttribute('id')
