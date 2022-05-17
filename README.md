@@ -8,6 +8,6 @@ Criação do site de uma organização ficticia. Utilizando ferramentas de HTML,
 Todo o conteúdo desse site tem finalidade exclusivamente educacional.
 
 // en-US //
-Creation of the website of a fake organization. Using HTML, CSS and JavaScript tools to maintain responsiveness on Desktop and Mobile devices.
+Creation of a website about a fictional organization. Using HTML, CSS and JavaScript tools to maintain responsiveness on Desktop and Mobile devices.
 
 All content on this site is for educational purposes only.
