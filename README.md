@@ -1,6 +1,6 @@
 # NLW2022
 
-NLW 2022 - Rocketseat
+NLW 2022 - Rocketseat - Projeto DoctorCare
 
 // pt-BR //
 Criação do site de uma organização ficticia. Utilizando ferramentas de HTML, Css e JavaScript, para manter a responsividade em dispositivos Desktop e Mobile.
